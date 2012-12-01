@@ -10,13 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201224633) do
+ActiveRecord::Schema.define(:version => 20121201233932) do
 
   create_table "bugs", :force => true do |t|
     t.string   "description"
     t.string   "priority"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "task_id"
   end
 
   create_table "features", :force => true do |t|
@@ -35,6 +36,8 @@ ActiveRecord::Schema.define(:version => 20121201224633) do
     t.decimal  "estimated_time"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "user_id"
+    t.integer  "feature_id"
   end
 
   create_table "users", :force => true do |t|
