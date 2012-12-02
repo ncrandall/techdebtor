@@ -47,17 +47,17 @@ class Task < ActiveRecord::Base
       end
     end
 
-    trees.each do |tree|
-      root = tree[0][:obj]
-      if !root.prereq_tasks.empty?
-        tree[0][:hours] += root.prereq_tasks[0].estimated_time
-      end
+   # trees.each do |tree|
+    #  root = tree[0][:obj]
+    #  if !root.prereq_tasks.empty?
+    #    tree[0][:hours] += root.prereq_tasks[0].estimated_time
+    #  end
       #cur_offset = 0
       #tsks = tree[0][:obj].prereq_tasks;
       #if !tsks.empty?
       #  tree[0][:hours] += tsks[0].estimated_time
       #end
-    end
+   # end
 
     trees
   end

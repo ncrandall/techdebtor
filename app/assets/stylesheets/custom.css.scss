@@ -1,5 +1,17 @@
 @import "bootstrap";
 
+.div9{
+  margin-left: 137px;
+}
+
+.div10{
+  margin-left: 150px;
+}
+
+tr{
+  position: relative;
+}
+
 body{
   margin-top: 40px;
   background-color: #FFF;
@@ -69,8 +81,10 @@ body{
 
 .time-block{
   line-height: 60px;
-  color: #FFF
-  
+  color: #FFF;
+  font-weight: bold;
+  padding-left: 10px;  
+  text-shadow: 1px 1px 1px #333;
 }
 
 .time-block-divider{
