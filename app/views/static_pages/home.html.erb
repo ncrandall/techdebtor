@@ -1,2 +1,20 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<div class="container custom-body"> 
+<span class="pull-right"><%= link_to "SIGN IN", new_user_session_path %></span>
+<div class="span6 offset3 center"><br /><br />
+  <p>
+    <%= image_tag("logo_big.png", :alt => "TECHDEBTOR") %>
+  </p><br />
+  <p>
+    Welcome! Register below<br /> to create your first project.
+  </p>
+  <%= form_for :user, :url => user_registration_path do |f| %>
+    <%= f.text_field :email, :placeholder => "Email", :class => "input-larger" %>
+    <br />
+    <%= f.password_field :password, :placeholder => "Password", :class => "input-larger" %>
+    <br />
+    <%= f.password_field :password_confirmation, :placeholder => "Password Confirm", :class => "input-larger" %>
+    <br /> 
+    <%= f.submit "GO", :class => "btn-go" %>
+  <% end %>
+</div>
+</div>

@@ -1,0 +1,19 @@
+<div class="span6 offset3 center"><br /><br />
+<h3>Sign up</h3>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+<div>
+  <%= f.email_field :email, :placeholder => "Email", :class => "input-larger" %></div>
+
+  <div>
+  <%= f.password_field :password, :placeholder => "Password", :class => "input-larger" %></div>
+
+  <div>
+  <%= f.password_field :password_confirmation, :placeholder => "Password Confirm", :class => "input-larger" %></div>
+
+  <div><%= f.submit "Sign up", :class => "btn-go" %></div>
+<% end %>
+<%= render :partial => "devise/shared/links" %>
+</div>

@@ -1,0 +1,16 @@
+<div class="span6 offset3 center"><br /><br />
+<h2>Sign in</h2>
+
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div>
+  <%= f.email_field :email, :placeholder => "Email", :class => "input-larger" %></div>
+
+  <div>
+  <%= f.password_field :password, :placeholder => "Password", :class => "input-larger" %></div>
+
+  <div><%= f.submit "Sign in", :class => "btn-go" %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
+</div>
+

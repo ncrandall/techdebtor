@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121202005934) do
+ActiveRecord::Schema.define(:version => 20121202092131) do
 
   create_table "features", :force => true do |t|
     t.string   "name"
@@ -19,19 +19,14 @@ ActiveRecord::Schema.define(:version => 20121202005934) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "prereq_tasks", :force => true do |t|
+  create_table "task_tasks", :force => true do |t|
     t.integer  "task_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "prereq_task_id"
   end
 
-  create_table "subtasks", :force => true do |t|
-    t.string   "description"
-    t.string   "priority"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "task_id"
-  end
+  add_index "task_tasks", ["task_id", "prereq_task_id"], :name => "index_task_tasks_on_task_id_and_prereq_task_id", :unique => true
 
   create_table "tasks", :force => true do |t|
     t.string   "name"
@@ -44,6 +39,8 @@ ActiveRecord::Schema.define(:version => 20121202005934) do
     t.datetime "updated_at",     :null => false
     t.integer  "user_id"
     t.integer  "feature_id"
+    t.integer  "parent_id"
+    t.integer  "child_id"
   end
 
   create_table "users", :force => true do |t|
@@ -61,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20121202005934) do
     t.datetime "updated_at",                             :null => false
     t.string   "name"
     t.string   "photo_url"
+    t.string   "color"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -1,17 +1,22 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
-      <h1>
-        <%= link_to "Harmonigram", root_path, :id => "logo" %>
-      </h1>
+      <p class="pull-left logo">
+        <%= image_tag("logo_small.png", :alt => "TECHDEBTOR") %>
+      </p>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Help", "#" %></li>
-    
           <% if user_signed_in? %>
-            <li><p class='navbar-text'>Signed in as <%= current_user.email %> <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></p></li>
+            <li><%= link_to "CHART", "#" %></li>
+            <li><%= link_to "TEAM", "#" %></li>
+            <li><%= link_to "ME", "#" %></li>
+            <li><form class="form-search">
+  <input type="text" class="input-medium search-query">
+  <button type="submit" class="btn">+ Add Project</button>
+</form></li>
+            <li><p class='navbar-text'><%= link_to "SIGN OUT", destroy_user_session_path, :method => 'delete' %></p></li>
           <% else %>
-            <li><%= link_to "Sign in", new_user_session_path %></li>
+            <li><%= link_to "SIGN IN", new_user_session_path %></li>
           <% end %>
         </ul>
       </nav>

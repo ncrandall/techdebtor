@@ -1,0 +1,28 @@
+<h4>PROJECT 1</h4>
+
+<div>
+  <table class="table">
+    <tr>
+      <td>MON</td>
+      <td>TUE</td>
+      <td>WED</td>
+      <td>THURS</td>
+      <td>FRI</td>
+    </tr>
+
+    <% @task_trees.each do |tree| %>
+    <tr>
+      <td colspan="5">
+        <% tree.each do |task| %>
+        <% task[:obj].prereq_tasks.each do |pt| %>
+          <p class="pull-left time-block-divider" style="background-color: #<%= pt.user.color %>"> &nbsp;</p>
+        <% end %>
+        <p class="pull-left time-block" style="margin-left: <%= task[:hours] / 40.0 * 100 %>%; width: <%= task[:obj].estimated_time/40.0 * 100 %>%; background-color: #<%= task[:obj].user.color %>">
+          <%= task[:obj].name %>
+        </p>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

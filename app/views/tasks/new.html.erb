@@ -1,0 +1,19 @@
+<div class="offset2 span8">
+  <%= form_for @task do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <%= f.label :status %>
+    <%= f.select :status, ["new", "acknowledged", "pending review", "closed"] %>
+
+    <%= f.label :due_date %>
+    <%= f.text_field :due_date %>
+
+    <%= f.label :priority %>
+    <%= f.select :priority, ["high","medium","low"] %>
+
+  <% end %>
+</div>
