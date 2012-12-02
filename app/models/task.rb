@@ -5,4 +5,7 @@ class Task < ActiveRecord::Base
   belongs_to :feature
 
   has_many :bugs, :dependent => :destroy
+  
+  has_many :subtasks
+
 end

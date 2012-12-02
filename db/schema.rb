@@ -10,21 +10,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201233932) do
-
-  create_table "bugs", :force => true do |t|
-    t.string   "description"
-    t.string   "priority"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "task_id"
-  end
+ActiveRecord::Schema.define(:version => 20121202005934) do
 
   create_table "features", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "prereq_tasks", :force => true do |t|
+    t.integer  "task_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "subtasks", :force => true do |t|
+    t.string   "description"
+    t.string   "priority"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "task_id"
   end
 
   create_table "tasks", :force => true do |t|
